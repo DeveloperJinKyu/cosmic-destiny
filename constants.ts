@@ -1,25 +1,32 @@
 import { OptionItem } from "./types";
 
-export const HAIR_OPTIONS: OptionItem[] = [
+export const HAIR_OPTIONS_MALE: OptionItem[] = [
   { id: 'short_neat', label: '단정한 숏컷' },
-  { id: 'long_straight', label: '긴 생머리' },
-  { id: 'wavy_perm', label: '웨이브 펌' },
-  { id: 'natural_layer', label: '내추럴 레이어드' },
   { id: 'two_block', label: '투블럭' },
-  { id: 'ponytail', label: '포니테일' },
-  { id: 'braided', label: '땋은 머리' },
-  { id: 'buzz_cut', label: '반삭 스타일' },
+  { id: 'caesar_cut', label: '시저컷' },
+  { id: 'pomade', label: '포마드 헤어' },
+  { id: 'natural_layer', label: '내추럴 레이어드' },
+  { id: 'undercut', label: '언더컷' },
 ];
 
-export const EYE_OPTIONS: OptionItem[] = [
-  { id: 'cat_eye', label: '고양이상' },
-  { id: 'puppy_eye', label: '강아지상' },
-  { id: 'sharp_eye', label: '날카로운 눈매' },
-  { id: 'big_eye', label: '크고 맑은 눈' },
-  { id: 'tired_eye', label: '나른한 눈매' },
-  { id: 'smiling_eye', label: '웃는 눈매' },
-  { id: 'sparkling_eye', label: '반짝이는 눈' },
-  { id: 'monolid', label: '매력적인 무쌍' },
+export const HAIR_OPTIONS_FEMALE: OptionItem[] = [
+  { id: 'long_straight', label: '긴 생머리' },
+  { id: 'bob_cut', label: '단발 보브' },
+  { id: 'wavy_perm', label: '웨이브 펌' },
+  { id: 'ponytail', label: '포니테일' },
+  { id: 'braided', label: '땋은 머리' },
+  { id: 'layered_cut', label: '레이어드 컷' },
+];
+
+export const FACE_OPTIONS: OptionItem[] = [
+  { id: 'puppy_face', label: '강아지상' },
+  { id: 'cat_face', label: '고양이상' },
+  { id: 'dinosaur_face', label: '공룡상' },
+  { id: 'bear_face', label: '곰상' },
+  { id: 'fox_face', label: '여우상' },
+  { id: 'rabbit_face', label: '토끼상' },
+  { id: 'horse_face', label: '말상' },
+  { id: 'hamster_face', label: '햄스터상' },
 ];
 
 export const OUTFIT_OPTIONS: OptionItem[] = [

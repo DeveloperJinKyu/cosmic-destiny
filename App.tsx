@@ -43,7 +43,8 @@ const App: React.FC = () => {
           onSubmit={(data) => {
             updateUserData(data);
             nextStep();
-          }} 
+          }}
+          onBack={prevStep}
           initialData={userData} 
         />
       )}

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { UserData } from '../types';
 import Button from './Button';
-import { HAIR_OPTIONS, EYE_OPTIONS, OUTFIT_OPTIONS } from '../constants';
+import { FACE_OPTIONS, OUTFIT_OPTIONS } from '../constants';
 
 interface CharacterInputProps {
   onSubmit: (data: Partial<UserData>) => void;
@@ -10,16 +10,15 @@ interface CharacterInputProps {
 }
 
 const CharacterInput: React.FC<CharacterInputProps> = ({ onSubmit, onBack, initialData }) => {
-  const [hair, setHair] = useState(initialData.character.hairStyle || HAIR_OPTIONS[0].id);
-  const [eyes, setEyes] = useState(initialData.character.eyeStyle || EYE_OPTIONS[0].id);
+  const [face, setFace] = useState(initialData.character.eyeStyle || FACE_OPTIONS[0].id);
   const [outfit, setOutfit] = useState(initialData.character.outfitStyle || OUTFIT_OPTIONS[0].id);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const handleSubmit = () => {
     onSubmit({
       character: {
-        hairStyle: hair,
-        eyeStyle: eyes,
+        hairStyle: '',
+        eyeStyle: face,
         outfitStyle: outfit
       }
     });
@@ -43,7 +42,7 @@ const CharacterInput: React.FC<CharacterInputProps> = ({ onSubmit, onBack, initi
 
     return (
       <div className="space-y-3">
-        <h3 className="text-xs font-medium text-gray-400 tracking-wider uppercase border-l-2 border-purple-900 pl-2">
+        <h3 className="text-sm md:text-xs font-medium text-gray-300 tracking-wider uppercase border-l-2 border-purple-900 pl-2">
           {title}
         </h3>
         <div className="grid grid-cols-2 gap-2">
@@ -52,13 +51,13 @@ const CharacterInput: React.FC<CharacterInputProps> = ({ onSubmit, onBack, initi
               type="button"
               key={opt.id}
               onClick={(e) => handleClick(e, opt.id)}
-              className={`p-3 rounded-md border text-center transition-all duration-300 ${
+              className={`p-3 md:p-3 rounded-md border text-center transition-all duration-300 ${
                 selected === opt.id
                   ? 'bg-purple-900/40 border-purple-500 text-white shadow-[0_0_15px_rgba(168,85,247,0.2)]'
-                  : 'bg-transparent border-white/5 hover:bg-white/5 text-gray-500 hover:text-gray-300'
+                  : 'bg-transparent border-white/5 hover:bg-white/5 text-gray-300 hover:text-gray-100'
               }`}
             >
-              <span className="text-xs font-light tracking-wide">{opt.label}</span>
+              <span className="text-sm md:text-xs font-normal tracking-wide">{opt.label}</span>
             </button>
           ))}
         </div>
@@ -67,38 +66,32 @@ const CharacterInput: React.FC<CharacterInputProps> = ({ onSubmit, onBack, initi
   };
 
   return (
-    <div className="w-full space-y-8 animate-fade-in pb-8 px-2">
-      <div className="text-center space-y-2">
-        <h2 className="text-xl font-bold tracking-widest text-white uppercase">Visual Interface</h2>
-        <p className="text-gray-300 text-xs font-light tracking-wide">당신의 운명을 표현하는 캐릭터를 선택하세요</p>
+    <div className="w-full space-y-8 animate-fade-in pb-8 px-6">
+      <div className="text-center space-y-3">
+        <h2 className="text-2xl md:text-xl font-bold tracking-widest text-white uppercase">수호신 선택</h2>
+        <p className="text-gray-200 text-sm md:text-xs font-normal tracking-wide leading-relaxed">나와 닮은 수호신을 만들어보세요!</p>
       </div>
 
       <div ref={scrollContainerRef} className="space-y-8 max-h-[60vh] overflow-y-auto scrollbar-hide pr-1">
         <Section 
-          title="Hair" 
-          options={HAIR_OPTIONS} 
-          selected={hair} 
-          onSelect={setHair} 
+          title="얼굴상" 
+          options={FACE_OPTIONS} 
+          selected={face} 
+          onSelect={setFace} 
         />
         <Section 
-          title="Eye" 
-          options={EYE_OPTIONS} 
-          selected={eyes} 
-          onSelect={setEyes} 
-        />
-        <Section 
-          title="Outfit" 
+          title="옷 스타일" 
           options={OUTFIT_OPTIONS} 
           selected={outfit} 
           onSelect={setOutfit} 
         />
       </div>
 
-      <div className="flex gap-3 pt-4">
-        <Button variant="secondary" onClick={onBack} className="flex-1 text-xs uppercase tracking-widest">
+      <div className="flex gap-6 pt-4">
+        <Button variant="outline" onClick={onBack} className="flex-1 text-base md:text-xs uppercase tracking-widest">
           이전으로
         </Button>
-        <Button onClick={handleSubmit} className="flex-[2] text-xs uppercase tracking-widest">
+        <Button onClick={handleSubmit} className="flex-[2] text-base md:text-xs uppercase tracking-widest">
           완료하기
         </Button>
       </div>

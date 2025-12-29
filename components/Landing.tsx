@@ -37,19 +37,15 @@ const Landing: React.FC<LandingProps> = ({ onStart }) => {
             copyright by jin.kyu_kim
           </span>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-            Cosmic<br />
-            Destiny
+            2026년 운세<br />
+            사주풀이
           </h1>
         </div>
-        
-        <p className="text-gray-300 text-sm font-light tracking-wide leading-relaxed max-w-xs mx-auto">
-          2026년 당신의 운명을 예언합니다
-        </p>
       </div>
 
-      <div className="w-full z-20 px-4">
+      <div className="w-full z-20 px-6">
         <Button onClick={onStart} fullWidth className="group tracking-widest text-sm font-semibold uppercase bg-white text-black hover:bg-gray-200 border-none">
-          Start
+          시작하기
         </Button>
       </div>
     </div>
