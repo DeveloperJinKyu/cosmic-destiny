@@ -51,7 +51,7 @@ const FortuneInput: React.FC<FortuneInputProps> = ({ onSubmit, onBack, initialDa
         <p className="text-gray-200 text-sm md:text-xs font-normal tracking-wide leading-relaxed">운명 예언을 위해 당신의 정보를 입력해주세요</p>
       </div>
 
-      <form className="space-y-8 px-6 overflow-hidden" onSubmit={(e) => e.preventDefault()}>
+      <form className="space-y-8 px-6 overflow-hidden" onSubmit={handleSubmit}>
         
         {/* Name Input */}
         <div>
@@ -126,7 +126,7 @@ const FortuneInput: React.FC<FortuneInputProps> = ({ onSubmit, onBack, initialDa
           <Button type="button" variant="outline" onClick={onBack} className="flex-1 text-base md:text-sm uppercase tracking-widest">
             취소
           </Button>
-          <Button type="button" onClick={handleSubmit} disabled={!isFormValid} className="flex-[2] text-base md:text-sm uppercase tracking-widest">
+          <Button type="submit" onClick={handleSubmit} className="flex-[2] text-base md:text-sm uppercase tracking-widest">
             진행하기
           </Button>
         </div>
