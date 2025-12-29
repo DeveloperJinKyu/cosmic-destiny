@@ -51,7 +51,7 @@ const FortuneInput: React.FC<FortuneInputProps> = ({ onSubmit, onBack, initialDa
         <p className="text-gray-200 text-sm md:text-xs font-normal tracking-wide leading-relaxed">운명 예언을 위해 당신의 정보를 입력해주세요</p>
       </div>
 
-      <form className="space-y-8 px-6">
+      <form className="space-y-8 px-6 overflow-hidden" onSubmit={(e) => e.preventDefault()}>
         
         {/* Name Input */}
         <div>
@@ -112,7 +112,7 @@ const FortuneInput: React.FC<FortuneInputProps> = ({ onSubmit, onBack, initialDa
         </div>
 
         {/* Birth Time */}
-        <div>
+        <div className="w-full">
           <label className={labelClass}>출생 시간 (선택사항)</label>
           <input
             type="time"
