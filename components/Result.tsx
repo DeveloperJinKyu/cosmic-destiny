@@ -355,7 +355,6 @@ const Result: React.FC<ResultProps> = ({ userData, onRestart }) => {
           </div>
           <p className="text-gray-300 text-sm md:text-xs font-light tracking-wide max-w-xs mx-auto leading-relaxed">
             <span className="text-purple-300 font-medium">{userData.name}</span>님의 운명을 읽는 중...<br/>
-            <span className="text-gray-500 text-[10px]">잠시만 기다려주십시오</span>
           </p>
         </div>
         
